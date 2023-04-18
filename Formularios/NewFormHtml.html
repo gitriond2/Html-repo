@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+table{
+	text-align: center;
+	background-color:#C90;
+	width:25%;
+	margin:auto;
+	border:2px #CC3300 dashed;
+}
+td{
+	padding: 15px;
+}
+
+</style>
+
+<script>
+
+function comenzar(){
+	var nombre= document.getElementById("nombre");
+	var apellido= document.getElementById("apellido");
+	var edad= document.getElementById("edad");
+	
+	nombre.addEventListener("input",validar,false);
+	apellido.addEventListener("input",validar,false);
+	
+	validar();						//llama a la funcion de afuera sin tener que escribirla dentro.	
+}
+function validar(){
+	if(nombre.value=="" && apellido.value==""){
+		nombre.setCustomValidity("introduce Nombre y Apellido");	
+		nombre.style.background="#FFDDDD";
+		apellido.style.background="#FFDDDD";
+	}
+	else{
+		nombre.setCustomValidity("");
+		nombre.style.background="#FFFFFF";
+		apellido.style.background="#FFFFFF";
+	}
+}
+
+
+
+window.addEventListener("load",comenzar,false);
+
+</script>
+
+</head>
+
+<body>
+<section>
+<form name="registro_usuario" method="get">
+<table>
+<tr>
+	<td>
+    	Usuario:
+    </td>
+    <td>
+    	<input pattern="[A-Za-z]{3}" name="MiUsuario" id="MiUsuario" maxlength="10" required>
+    </td>
+</tr>
+<tr>	
+    <td>
+    	Email:
+    </td>
+    <td>
+    	<input type="email" id="email" name="email" required>
+    </td>
+</tr>
+<tr>    
+    <td>
+    	Edad:
+    </td>
+    <td>
+    	<input type="number" id="edad" min="1" max="100">
+    </td>
+</tr>
+<tr> 
+	<td>   
+    <output id="rango" >0 a 30</output>
+    </td>
+</tr>
+<tr> 
+	<td>   
+    <input type="submit" id="enviar" value="registrar" />
+    </td>
+</tr>
+</table>
+
+
+<!--<datalist id="informacion">
+<option value="3543132132" label="telefono 1"></option>
+<option value="3543515555" label="telefono 2"></option>
+<option value="3554123135" label="telefono 3"></option>
+</datalist>
+Telefono:&nbsp;<input type="tel" name="Tel" id="Tel" list="informacion">-->
+</form>
+</section>
+</body>
+</html>

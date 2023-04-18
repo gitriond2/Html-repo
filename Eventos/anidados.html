@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<script>
+function LosEventos(){
+	var element=document.getElementsByTagName("p")[0];
+	var element2=document.getElementsByTagName("img")[0];
+	element.addEventListener("click",aviso2,false);
+	element2.addEventListener("click",aviso,false);	
+}
+
+function aviso(){
+	alert("hola soy la imagen");
+}
+function aviso2(){
+	alert("hola soy el parrafo");	
+}
+window.addEventListener("load",LosEventos,false);				//el tercero da prioridad de ejecucion si es true primero sino seg
+</script>
+</head>
+
+<body>
+<p><img src="1.jpg"></p>
+</body>
+</html>

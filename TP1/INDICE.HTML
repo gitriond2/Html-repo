@@ -1,0 +1,70 @@
+<DOCTYPE!>
+<HEAD>
+    <title></title>
+    <meta name= "autor" content= " jose romano ">
+    <meta name= "descripcion" content="">
+    <meta name= ""  content="">
+    <meta charset = "utf-8">
+    <link rel= "icon" href= "IMG/imagenloca.png" type = "image/gif" >
+    
+</HEAD>
+<BODY>
+    <form>
+    <p>
+        nombre: <input type= "text" name="nombre_box" autofocu    required />
+        <br /><br />
+        Correo Electronico: <input type="email" name="email_box" required>
+        <br /><br />
+        Direccion WEB: <input type="url" name="url_box" placeholder="si posee una pagina WEB ingresela en esta caja"
+        <br /><br /><br />
+        fecha: <input type="date" name="date_box" />
+        &#160;&#160;&#160;&#160;&#160;&#160;
+        Tiempo: <input type="time" name="time_box" />
+        &#160;&#160;&#160;&#160;&#160;&#160;
+        fecha y hora de nacimiento: <input type="datetime" name="fecha_box" />
+        <br /> <br />
+        mes: <input type="month" name="mes_box" />
+        &#160;&#160;&#160;&#160;&#160;&#160;
+        Semana: <input type="week" name ="semana_box" />
+        <br/> <br/>
+        numero(min -10, max  10): <input type="number" name="number_control" min="-10" max="10" value="0" />
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        Termino de busqueda: <input type="search"  name="search_box" />
+        <br /><br />
+        ingrese su telefono: <input type="tel" name="tel_box" required placeholder="(codigo de area)Numero"/>
+        <br /><br />
+        
+        <br /><br />
+        Color Favorito: <input type="color" name="color_control" />
+        <br /><br />
+         <p>
+         Seleccione un telefono de contacto: <input type="numero" name="numero_contacto" list="lista-tel" />
+         </p>
+        <br /><br />
+        selecione la carrera a la que desea inscribirse:
+        <select name="carreras" >
+            <option value="" disabled selected>Elija una opcion</option>
+            <option value="prog"> programacion(TECDA)</option>
+            <option value="saab"> Profesorado de Historia</option>
+            <option value="fiat"> Profesorado de Geografia</option>
+            <option value="audi"> Profesorado de Biologia</option>
+        </select>
+        <br /><br />
+        
+    <textarea name="Reclamos" rows="10" cols="300" placeholder="ingrese sureclamo aqui"></textarea>
+    
+    <br /><br />
+        <button type="button" onclick="alert('Faltan algunos parametros')">verificar</button>
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        <input type="submit" value="enviar!">
+        &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        <button type="submit"><img src="IMG/image.png" height="30" widht="120"></button>
+    <form>
+        
+        <datalist id="lista-tel">
+            <option value="15-602-4532"/>
+            <option value="15-345-3423"/>
+            <option value="15-999-1000"/>
+        </datalist>
+    </form>
+</BODY>

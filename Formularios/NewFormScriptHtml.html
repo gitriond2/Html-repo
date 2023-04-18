@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+table{
+	text-align: center;
+	background-color:#C90;
+	width:25%;
+	margin:auto;
+	border:2px #CC3300 dashed;
+}
+td{
+	padding: 15px;
+}
+
+</style>
+
+<script>
+var edad;
+
+function comenzar(){
+	edad= document.getElementById("edad");
+	edad.addEventListener("change",cambia_rango,false);
+	
+	document.datos_usuario.addEventListener("invalid",Validar,true);				//aca esta usando el NAME
+	document.getElementById("enviar").addEventListener("click",enviar,false);
+	document.datos_usuario.addEventListener("input",validar_tiempo_real,false);		//aca esta usando el NAME
+}
+function cambia_rango(){
+	var salida= document.getElementById("rango");
+	var calculo= edad.value - 30;
+	if(calculo<30){
+		calculo=0;
+	}
+	salida.innerHTML=calculo + " a " + edad.value;	
+}
+function validar(e){
+	var elemento= e.target;
+	elemento.style.backgraund="#FFDDDD";
+}
+function enviar(){
+	var usuario_cuadro=document.getElementById("usuario");
+	var correcto=document.datos_usuario.checkValidity();
+	
+	if(correcto==true){
+		document.datos_usuario.submit();
+	}else if(usuario_cuadro.validity.valueMissing==true || usuario_cuadro.validity.patternMismatch==true){
+		alert("el usuario no puede estar vacio y no puede tener menos de 3 caracteres");
+	}																//raro no me funciona
+}
+function validar_tiempo_real(e){
+	var elemento =e.target;	
+	if(element.validity.valid==true){
+		element.style.backgraund="#FFFFFF";	
+	}
+	else{
+		element.style.backgraund="#FFDDDD";	
+	}
+}
+window.addEventListener("load",comenzar,false);
+
+</script>
+
+</head>
+
+<body>
+<section>
+<form name="datos_usuario" method="get">
+<table>
+<tr>
+	<td>
+    	Usuario:
+    </td>
+    <td>
+    	<input pattern="[A-Za-z]{3}" name="usuario" id="usuario" maxlength="10" required>
+    </td>
+</tr>
+<tr>	
+    <td>
+    	Email:
+    </td>
+    <td>
+    	<input type="email" id="email" name="email" required>
+    </td>
+</tr>
+<tr>    
+    <td>
+    	Edad:
+    </td>
+    <td>
+    	<input type="range" id="edad" min="0" max="120" value="30" step="30">
+    </td>
+</tr>
+<tr> 
+	<td>   
+    <output id="rango" >0 a 30</output>
+    </td>
+</tr>
+<tr> 
+	<td>   
+    <input type="submit" id="enviar" value="registrar" />
+    </td>
+</tr>
+</table>
+
+
+<!--<datalist id="informacion">
+<option value="3543132132" label="telefono 1"></option>
+<option value="3543515555" label="telefono 2"></option>
+<option value="3554123135" label="telefono 3"></option>
+</datalist>
+Telefono:&nbsp;<input type="tel" name="Tel" id="Tel" list="informacion">-->
+</form>
+</section>
+</body>
+</html>

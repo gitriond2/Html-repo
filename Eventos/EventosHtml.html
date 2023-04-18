@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script>
+var imagen=new Array(3);
+function tipoflor(){
+	alert("pensamientos");
+}
+function manejoDeFlor(){
+	for(var i=0;i<4;i++){
+	imagen[i]= document.getElementsByTagName("img")[i];
+	}
+	imagen[0].addEventListener("mouseover",function(){imagen[0].width=225,imagen[0].height=225;},false);
+	imagen[0].addEventListener("mouseout",function(){imagen[0].width=200,imagen[0].height=200;},false);
+	imagen[0].addEventListener("click",tipoflor,false);
+										//se puede repetir
+	
+	/*imagen.addEventListener("mouseover",Crece,false);
+	imagen.addEventListener("mouseout",Decrece,false);
+	imagen.addEventListener("click",tipoflor,false);*/
+}
+
+/*function Crece(){
+	imagen.width="250";
+	imagen.height="250";
+}
+function Decrece(){
+	imagen.width="200";
+	imagen.height="200";
+}
+window.onload=manejoDeFlor;*/
+window.addEventListener("load",manejoDeFlor,false);
+
+</script>
+
+
+</head>
+
+<body>
+
+<p> <img src="1.jpg" width="200" height="200"> </p>
+
+
+</body>
+</html>
